@@ -46,6 +46,19 @@
         </h3></li></ul>
         <p>
           I practice scaling HTTP servers by creating servers with super resources, so it is easy to overload them.
+          Step 1:
+          I created a new project in Visual Studio and ran 'dotnet new webapi' in the terminal. I created 2 endpoints that read and write social media post for a facebook like application.
+          I installed the docker extension and then used command shift p, and typed "Add docker files to workspace"
+          To run dockerfile: https://code.visualstudio.com/docs/containers/quickstart-aspnet-core.
+          Open Command Palette (Ctrl+Shift+P) and issue Docker Images: Build Image... command.
+          I then went to the docker extension, found the built image and right-clicked to run.
+
+          Now I need to constrain the resources. CPU and memory are a good bet.
+          docker run --rm -d -p 5049:5049/tcp --cpus=".1" --memory="25m" lowresourceservers:latest
+can't generate out of memory exception.weird
+
+
+          would be interesting to explore bandwidth too!
         </p>
 
     <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
